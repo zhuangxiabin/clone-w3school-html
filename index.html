@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>w3schools.com</title>
+	<link rel="stylesheet" href="css\font-awesome-4.7.0\css\font-awesome.min.css">
+	<script>
+		var flag1=true;
+		var flag2=true;
+		var flag3=true;
+		function show(str1,str2,str3,flag){
+			var tutor=document.getElementById(str1);
+   			var t_down=document.getElementById(str2);
+ 			var t_up=document.getElementById(str3);
+ 					tutor.style.display="block";
+		 			t_down.style.display="none";
+					t_up.style.display="inline-block";
+					if (flag=='flag1') {
+						return flag1=false;
+					}else if(flag=='flag2'){
+						return flag2=false;
+					}else if(flag=='flag3'){
+						return flag3=false;
+					}			
+		}
+		function close(str1,str2,str3,flag){
+			var tutor=document.getElementById(str1);
+   			var t_down=document.getElementById(str2);
+ 			var t_up=document.getElementById(str3);
+ 					tutor.style.display="none";
+		 			t_down.style.display="inline-block";
+			    	t_up.style.display="none";
+					if (flag=='flag1') {
+						return flag1=true;
+					}else if(flag=='flag2'){
+						return flag2=true;
+					}else if(flag=='flag3'){
+						return flag3=true;
+					}
+		}
+		function show_tutorials(){
+		 	if (flag1){		
+		 				close('Nav-reference','down2','up2','flag2');		 							 	close('Nav-examples','down3','up3','flag3');		 						 	show('Nav-tutorials','down1','up1','flag1');
+					 			//return flag1=false;					
+		 		}		 		
+		 		else{
+		 			close('Nav-tutorials','down1','up1','flag1');
+		 			//return flag1 =true;
+		 							 			
+		 		}
+  			
+		 }
+		 function show_reference(){			
+		 	if (flag2){	
+		 			close('Nav-tutorials','down1','up1','flag1');
+		 			close('Nav-examples','down3','up3','flag3');		 			
+		 			show('Nav-reference','down2','up2','flag2');
+		 			//return flag2=false;
+		 		}
+		 		else{		 		
+		 		close('Nav-reference','down2','up2','flag2');
+		 		//return flag2=true;				
+		 	}
+		 }	
+		 function show_examples(){
+		 	if(flag3){		 	
+		 			close('Nav-tutorials','down1','up1','flag1');
+		 			close('Nav-reference','down2','up2','flag2');
+		 			show('Nav-examples','down3','up3','flag3');
+		 				//return flag3=false;	 					 		 			
+		 	}else{
+		 		close('Nav-examples','down3','up3','flag3');
+		 				//return flag3=true;
+		 	}
+		 	}		
+	</script>
+	<style>		
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;/*指定*/
+		}
+		body{
+			height: 1024px;
+		}
+		i{
+			margin-left: 5px;
+		}
+		@font-face
+		{
+		font-family: fontawesome;
+		src: url('css/fontawesome.woff');
+		}
+
+		.w3-container{
+			position:relative;
+    		background-color: #ffffff;
+    		height: 68px;
+    		padding-top: 20px;
+    		line-height: 50px;
+    		overflow: hidden;
+    		z-index: 1;			
+			padding-left:  16px;
+			padding-right: 16px;
+			padding-bottom: 0.15px;
+		}
+/*		.w3-center{
+			text-align: center;
+
+		}*/
+		.w3-logo{
+			position: absolute;
+			top: 17px;
+			font-family: fontawesome;
+			text-decoration: none;
+			line-height: 1;
+			font-size: 37px;
+			color:#555555;
+			display: block;
+			padding-left: 2px;
+			letter-spacing: 3px
+		}
+		.w3-logo span{
+			color: #4CAF50;
+		}
+		.w3-right{
+			float: right;
+			font-family: "Segoe UI",Arial,sans-serif;
+			letter-spacing: 4px;
+
+		}
+
+		.topnav{
+			position:relative;
+  			z-index:2;
+  			font-size: 17px;
+  			background-color:#5f5f5f;
+  			color:#f1f1f1;
+  			width:100%;
+  			padding:0;
+  			letter-spacing:1px;
+  			
+		}
+		.topnav a{
+			float: left;
+			margin: 0;
+			display: inline-block;
+			text-decoration: none;
+			color: #fff;
+			padding:11px 15px 13px 15px !important;
+			border-bottom: none;
+
+		}
+		.topnav a:hover{
+			background-color: black;
+
+		}
+		.active{
+			background-color: #4CAF50;
+		}
+		.w3-left-small{
+			font-family: "Segoe UI",Arial,sans-serif;
+			padding-left: 15px;
+		}
+		.fa-home{
+			
+			width: 52px;
+			font-size: 22px;
+			color: #fff;
+			padding-top: 11px !important;
+			padding-bottom: 13px !important;
+			
+		}
+		.colsebtn{
+			float: right;
+			display: block;
+			cursor: pointer;
+/*			background-color: red;*/
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			padding:auto;
+			line-height: 50px;
+			font-weight: bold;
+		}
+		#Nav-tutorials{
+			padding: 8px;
+			background-color: #f1f1f1;
+			display: none;
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+		}
+		#Nav-reference{
+			padding: 8px;
+			background-color: #f1f1f1;
+			display: none;
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+		}
+		#Nav-examples{
+			padding: 8px;
+			background-color: #f1f1f1;
+			display: none;	
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;		
+		}
+		#nav_tutorials_content{
+			background-color: #f1f1f1;
+		}
+		.w3-col{
+			float: left;
+			width: 16.6666%;
+			height: 300px;
+			padding : 8px;
+		}
+		#Nav-examples .w3-col{
+			width: 24.9999%;
+		}
+		.w3-col a{
+			display: block;
+			text-decoration: none;
+			font-family: "Segoe UI",Arial,sans-serif;
+			font-size: 17px;
+			line-height: 1.5;
+			color: inherit;
+		}
+		.w3-col a:hover{
+			text-decoration: underline;
+		}
+		h3{
+			font-size: 24px;
+			margin: 10px 0;
+			padding-top: 30px;
+			font-weight: 400;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="w3-container">
+			<a class="w3-logo" href="#">
+				w3schools<span class="dotcom">.com</span>
+			</a>
+			<div class="w3-right">THE WORLD'S LARGEST WEB DEVELOPER SITE</div>
+	</div>
+	<div class="topnav">
+		<div style="overflow: auto;">
+			<div style="float: left;width: 50%;overflow: hidden;height: 44px;">
+				<a href="" class="fa fa-home"></a>
+				<a href="" class="active">HTML</a>
+				<a href="" class="w3-left-small">CSS</a>
+				<a href="" class="w3-left-small">JAVASCRIPT</a>
+				<a href="" class="w3-left-small">SQL</a>
+				<a href="" class="w3-left-small">PHP</a>
+				<a href="" class="w3-left-small">BOOTSTRAP</a>
+				<a href="" class="w3-left-small">JQUERY</a>
+				<a href="" class="w3-left-small">ANGULAR</a>
+				<a href="" class="w3-left-small">XML</a>
+			</div>
+			<div style="float: right;width: 30%;height: 44px;overflow: hidden" >
+				<a  onclick="show_tutorials();return false;" href="" class="w3-left-small" >
+				TUTORIALS<i class="fa fa-caret-down" id="down1"></i><i style="display:none" class="fa fa-caret-up" id="up1" ></i>
+				</a>
+				<a onclick="show_reference();return false;" href="" class="w3-left-small">
+				REFERENCES<i class="fa fa-caret-down" id="down2"></i><i class="fa fa-caret-up" style="display:none" id="up2"></i>
+				</a>
+				<a href="" class="w3-left-small" onclick="show_examples();return false;">
+				EXAMPLES<i class="fa fa-caret-down" id="down3"></i><i class="fa fa-caret-up" style="display:none" id="up3"></i>
+				</a>	
+			</div>		
+		</div>		
+	</div>
+	<div id="Nav-tutorials" style="overflow: auto; ">
+		<span class="colsebtn" onclick="show_tutorials();return false;">X</span>
+		<div id="nav_tutorials_content" style="overflow: auto;">
+			<div class="w3-col">
+				<h3>HTML/CSS</h3>
+				<a href="">Learn HTML</a>
+				<a href="">Learn CSS</a>
+				<a href="">Learn W3.CSS</a>
+				<a href="">Learn Colors</a>
+				<a href="">Learn Bootstrap</a>
+			</div>
+			<div class="w3-col">
+				<h3>JavaScript</h3>
+				<a href="">Learn Javascript</a>
+				<a href="">Learn jQuery</a>
+				<a href="">Learn jQueryMobile</a>
+				<a href="">Learn AppML</a>
+				<a href="">Learn AngularJS</a>
+				<a href="">Learn AJAX</a>
+				<a href="">Learn JSON</a>
+			</div>
+			<div class="w3-col">
+				<h3>HTML Graphics</h3>
+				<a href="">Learn Canvas</a>
+				<a href="">Learn SVG</a>
+				<a href="">Learn Icons</a>
+				<a href="">Learn Google Maps</a>
+				<a href="">Learn HTML Games</a>
+			</div>
+			<div class="w3-col">
+				<h3>Server Side</h3>
+				<a href="">Learn SQL</a>
+				<a href="">Learn PHP</a>
+				<a href="">Learn ASP</a>
+				<a href="">Learn ASP.NET</a>
+			</div>
+			<div class="w3-col">
+				<h3>Web Building</h3>
+				<a href="">Web Building</a>
+				<a href="">Web Statistics</a>
+				<a href="">Web Certificates</a>
+			</div>
+			<div class="w3-col">
+				<h3>XML</h3>
+				<a href="">Learn XML</a>
+				<a href="">Learn XSLT</a>
+			</div>
+		</div>		
+	</div>
+		<div id="Nav-reference" style="overflow: auto; ">
+		<span class="colsebtn" onclick="show_reference();return false;">X</span>
+		<div id="nav_tutorials_content" style="overflow: auto;">
+			<div class="w3-col">
+				<h3>HTML</h3>
+				<a href="">HTML Tag Reference</a>
+				<a href="">HTML Event Reference</a>
+				<a href="">HTML Color Rederence</a>
+			</div>
+			<div class="w3-col">
+				<h3>CSS</h3>
+				<a href="">CSS Reference</a>
+				<a href="">CSS Selector Reference</a>
+				<a href="">W3.CSS Reference</a>
+				<a href="">Bootstrap Reference</a>
+			</div>
+			<div class="w3-col">
+				<h3>JavaScript</h3>
+				<a href="">JavaScript Reference</a>
+				<a href="">HTML DOM Reference</a>
+				<a href="">jQuery Reference</a>
+				<a href="">jQuery Mobile Reference</a>
+				<a href="">AngularJS Referehnce</a>
+				<a href="">Google Maps Reference</a>
+			</div>
+			<div class="w3-col">
+				<h3>Server Side</h3>
+				<a href="">PHP Reference</a>
+				<a href="">SQL Reference</a>
+				<a href="">ASP Reference</a>
+				<a href="">Razor Reference</a>
+				<a href="">ASP.NET Reference</a>
+			</div>
+			<div class="w3-col">
+				<h3>XML</h3>
+				<a href="">XML Reference</a>
+				<a href="">XSLT Reference</a>
+				<a href="">XML Schema Reference</a>
+				<a href="">SVG Reference</a>
+			</div>
+				<div class="w3-col">
+				<h3>Charsets</h3>
+				<a href="">HTML Character Sets</a>
+				<a href="">HTML ASCII</a>
+				<a href="">HTML ANSI</a>
+				<a href="">HTML Windows-1252</a>
+				<a href="">HTML ISO-8859-1</a>
+				<a href="">HTML Symbols</a>
+				<a href="">HTML UTF-8</a>
+			</div>
+		</div>		
+	</div>
+		<div id="Nav-examples" style="overflow: auto; ">
+		<span class="colsebtn" onclick="show_examples();return false;">X</span>
+		<div id="nav_tutorials_content" style="overflow: auto;">
+			<div class="w3-col">
+				<h3>HTML/CSS</h3>
+				<a href="">HTML Examples</a>
+				<a href="">CSS Examples</a>
+				<a href="">W3.CSS Example</a>
+			</div>
+			<div class="w3-col">
+				<h3>JavaScript</h3>
+				<a href="">JavaScript Examples</a>
+				<a href="">HTML DOM Examples</a>
+				<a href="">jQuery Examples</a>
+				<a href="">jQuery Mobile Examples</a>
+				<a href="">AngularJS Examples</a>
+				<a href="">AJAX Examples</a>
+			</div>
+			<div class="w3-col">
+				<h3>Server Side</h3>
+				<a href="">PHP Examples</a>
+				<a href="">ASP Examples</a>
+				<a href="">Razor Example</a>
+				<a href="">.NET Examples</a>
+			</div>
+			<div class="w3-col">
+				<h3>XML</h3>
+				<a href="">XML Examples</a>
+				<a href="">XSL Examples</a>
+				<a href="">XPath Examples</a>
+				<a href="">XML Schema Examples</a>
+				<a href="">svg Examples</a>
+			</div>
+		</div>		
+	</div>
+</body>
+</html>
